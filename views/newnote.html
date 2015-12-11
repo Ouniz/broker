@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Broker Meeting App</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/newnote">New Work </a></li>
+                <li><a href="#">Link</a></li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</div>
+<div class="text-center">
+    <h1>Virtual Work Progressions</h1>
+    <p>This is a list of work progressions that was registered</p>
+</div>
+<div>
+    <!-- <h2>Latest Work</h2> -->
+
+<div class="container">
+    <form class="form-horizontal" action="newnote" method="post">
+        <fieldset>
+            <legend>Enter Work Progress</legend>
+
+            <!-- Form validation -->
+            {% if message.length > 0 %}
+                <div class="alert alert-danger alert-error">
+                    {{ message }}
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="memberName">Select Name</label>
+                <div class="col-md-4">
+                    <select class="form-control" name="memberName" id="memberName" placeholder="memberName">
+                        <option value="None">(Select Name)</option>
+                        <option value="ronnie">Ronnie</option>
+                        <option value="jannik">Jannik</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="project">Select Project</label>
+                <div class="col-md-4">
+                    <select class="form-control" name="project" id="project" placeholder="project">
+                        <option value="None">(Select Name)</option>
+                        <option value="frameworks">Frameworks</option>
+                        <option value="androidIOS">Android IOS</option>
+                        <option value="backend">Backend</option>
+                        <option value="spareTime">Spare Time</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="workYesterday">What did i do yesterday?</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" name="workYesterday" id="workYesterday" placeholder="workYesterday"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="workToday">What did i do today?</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" name="workToday" id="workToday" placeholder="workToday"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="impediment">Any impediment</label>
+                <div class="col-md-6">
+                    <textarea class="form-control" name="impediment" id="impediment" placeholder="None"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4">
+                    <label class="col-md-4 control-label" for="btnSaveNote" ></label>
+                    <button id="btnSaveNote" name="btnSaveNote" class="btn btn-primary pull-right">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
