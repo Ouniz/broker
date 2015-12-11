@@ -40,7 +40,7 @@ var brokerSchema = new Schema ({
         type: String,
         required: false,
         default: 'none'},
-    createdOn: { type: Date, default: Date.now }
+    createdOn: { type: String, default: Date.now }
 });
 
 // Export Model..
